@@ -65,8 +65,8 @@ Populates the **SQLite database** across:
 ##  Installation
 
 ```bash
-git clone https://github.com/username/protein-data-integration.git
-cd protein-data-integration
+git clone https://github.com/sidrataranum-eng93/ETL-protein.git
+cd ETL-protein
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
