@@ -1,0 +1,166 @@
+2025-05-31 15:37:46,693 - __main__ - INFO - Starting data extraction
+2025-05-31 15:37:46,695 - etl.extract - INFO - Extracting UniProt data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\uniprot_sprot.xml
+2025-05-31 15:37:46,696 - __main__ - ERROR - ETL pipeline failed: [Errno 2] No such file or directory: 'C:\\Users\\sidra\\Downloads\\protein_data_etl (2)\\protein_data_etl\\data\\uniprot_sprot.xml'
+Traceback (most recent call last):
+  File "C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\main.py", line 43, in main
+    extract_uniprot_data(session)
+  File "C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\etl\extract.py", line 115, in extract_uniprot_data
+    with open_func(xml_path, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\sidra\\Downloads\\protein_data_etl (2)\\protein_data_etl\\data\\uniprot_sprot.xml'
+2025-05-31 15:42:01,040 - __main__ - INFO - Starting data extraction
+2025-05-31 15:42:01,042 - etl.extract - INFO - Extracting UniProt data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\uniprot_sprot.xml
+2025-05-31 15:51:02,240 - etl.extract - INFO - Loaded 573230 UniProt records to staging
+2025-05-31 15:51:02,240 - etl.extract - INFO - Extracting STRING data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\9606.protein.links.v12.0.txt
+2025-05-31 16:13:47,147 - etl.extract - INFO - Loaded 13715404 STRING records to staging
+2025-05-31 16:13:47,150 - etl.extract - INFO - Extracting OpenTargets targets data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\target
+2025-05-31 16:13:58,679 - etl.extract - INFO - Extracting OpenTargets diseases data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\disease
+2025-05-31 16:14:00,624 - etl.extract - INFO - Extracting OpenTargets associations data from C:\Users\sidra\Downloads\protein_data_etl (2)\protein_data_etl\data\association_by_datasource_direct
+2025-05-31 16:18:08,767 - etl.extract - INFO - Loaded 78766 targets, 28513 diseases, and 3826181 associations to staging
+2025-05-31 16:18:08,767 - __main__ - INFO - Data extraction completed in 2167.72 seconds
+2025-05-31 16:18:08,767 - __main__ - INFO - ETL pipeline completed successfully
+2025-05-31 16:21:32,688 - __main__ - INFO - Starting data transformation
+2025-05-31 16:21:32,688 - etl.transform - INFO - Transforming UniProt data to proteins table
+2025-05-31 16:21:46,859 - etl.transform - INFO - Transformed 573230 protein records
+2025-05-31 16:21:46,859 - etl.transform - INFO - Transforming STRING data to protein_interactions table
+2025-05-31 16:22:06,177 - etl.transform - INFO - Found 7452762 STRING interactions above threshold
+2025-05-31 16:39:58,084 - etl.transform - INFO - Transformed 7195498 protein interaction records
+2025-05-31 16:40:00,635 - etl.transform - INFO - Transforming OpenTargets data
+2025-05-31 16:40:00,642 - etl.transform - INFO - Transforming targets
+2025-06-01 08:11:57,668 - __main__ - INFO - Starting data transformation
+2025-06-01 08:11:57,669 - etl.transform - INFO - Transforming UniProt data to proteins table
+2025-06-01 08:12:06,559 - etl.transform - INFO - Transformed 573230 protein records
+2025-06-01 08:12:06,559 - etl.transform - INFO - Transforming STRING data to protein_interactions table
+2025-06-01 08:12:22,631 - etl.transform - INFO - Found 7452762 STRING interactions above threshold
+2025-06-01 08:20:21,792 - etl.transform - INFO - Transformed 7195498 protein interaction records
+2025-06-01 08:20:24,700 - etl.transform - INFO - Transforming OpenTargets data
+2025-06-01 08:20:24,742 - etl.transform - INFO - Transforming targets
+2025-06-01 17:05:56,750 - etl.transform - INFO - Transforming diseases
+2025-06-01 17:05:56,843 - etl.transform - INFO - Transforming target-disease associations
+2025-06-01 17:05:59,529 - etl.transform - INFO - Transformed 78766 targets (18353 linked to UniProt), 28513 diseases, and 3826181 associations
+2025-06-01 17:05:59,529 - __main__ - INFO - Data transformation completed in 32041.86 seconds
+2025-06-01 17:05:59,529 - __main__ - INFO - ETL pipeline completed successfully
+2025-06-01 17:10:08,972 - __main__ - INFO - Starting semantic layer build
+2025-06-01 17:10:08,972 - etl.load - INFO - Building semantic layer
+2025-06-01 17:10:08,988 - etl.load - INFO - Gathering proteins with OpenTargets links
+2025-06-01 17:10:10,862 - etl.load - INFO - Found 18423 proteins with OpenTargets links
+2025-06-01 17:10:51,559 - etl.load - INFO - Processed 100/18423 proteins
+2025-06-01 17:11:28,591 - etl.load - INFO - Processed 200/18423 proteins
+2025-06-01 17:12:11,882 - etl.load - INFO - Processed 300/18423 proteins
+2025-06-01 17:12:48,315 - etl.load - INFO - Processed 400/18423 proteins
+2025-06-01 17:13:30,133 - etl.load - INFO - Processed 500/18423 proteins
+2025-06-01 17:14:12,417 - etl.load - INFO - Processed 600/18423 proteins
+2025-06-01 17:14:53,739 - etl.load - INFO - Processed 700/18423 proteins
+2025-06-01 17:15:39,825 - etl.load - INFO - Processed 800/18423 proteins
+2025-06-01 17:16:15,563 - etl.load - INFO - Processed 900/18423 proteins
+2025-06-01 17:16:56,332 - etl.load - INFO - Processed 1000/18423 proteins
+2025-06-01 17:17:37,677 - etl.load - INFO - Processed 1100/18423 proteins
+2025-06-01 17:18:21,488 - etl.load - INFO - Processed 1200/18423 proteins
+2025-06-01 17:19:01,302 - etl.load - INFO - Processed 1300/18423 proteins
+2025-06-01 17:19:38,807 - etl.load - INFO - Processed 1400/18423 proteins
+2025-06-01 17:20:17,910 - etl.load - INFO - Processed 1500/18423 proteins
+2025-06-01 19:09:38,018 - etl.load - INFO - Processed 1600/18423 proteins
+2025-06-01 19:10:20,507 - etl.load - INFO - Processed 1700/18423 proteins
+2025-06-01 19:11:04,004 - etl.load - INFO - Processed 1800/18423 proteins
+2025-06-01 19:11:40,951 - etl.load - INFO - Processed 1900/18423 proteins
+2025-06-01 19:12:17,234 - etl.load - INFO - Processed 2000/18423 proteins
+2025-06-01 19:12:56,538 - etl.load - INFO - Processed 2100/18423 proteins
+2025-06-01 19:13:34,719 - etl.load - INFO - Processed 2200/18423 proteins
+2025-06-01 19:14:19,065 - etl.load - INFO - Processed 2300/18423 proteins
+2025-06-01 19:15:00,285 - etl.load - INFO - Processed 2400/18423 proteins
+2025-06-01 19:15:38,702 - etl.load - INFO - Processed 2500/18423 proteins
+2025-06-01 19:16:18,555 - etl.load - INFO - Processed 2600/18423 proteins
+2025-06-01 19:16:59,566 - etl.load - INFO - Processed 2700/18423 proteins
+2025-06-01 19:17:38,843 - etl.load - INFO - Processed 2800/18423 proteins
+2025-06-01 19:20:33,193 - etl.load - INFO - Processed 2900/18423 proteins
+2025-06-01 19:21:18,469 - etl.load - INFO - Processed 3000/18423 proteins
+2025-06-01 19:22:01,622 - etl.load - INFO - Processed 3100/18423 proteins
+2025-06-01 19:22:44,878 - etl.load - INFO - Processed 3200/18423 proteins
+2025-06-01 19:23:29,708 - etl.load - INFO - Processed 3300/18423 proteins
+2025-06-01 19:24:17,327 - etl.load - INFO - Processed 3400/18423 proteins
+2025-06-01 19:25:13,295 - etl.load - INFO - Processed 3500/18423 proteins
+2025-06-01 19:25:56,203 - etl.load - INFO - Processed 3600/18423 proteins
+2025-06-01 19:26:37,530 - etl.load - INFO - Processed 3700/18423 proteins
+2025-06-01 19:27:19,444 - etl.load - INFO - Processed 3800/18423 proteins
+2025-06-01 19:28:06,584 - etl.load - INFO - Processed 3900/18423 proteins
+2025-06-01 19:28:55,053 - etl.load - INFO - Processed 4000/18423 proteins
+2025-06-01 19:29:36,941 - etl.load - INFO - Processed 4100/18423 proteins
+2025-06-01 19:30:19,153 - etl.load - INFO - Processed 4200/18423 proteins
+2025-06-01 19:31:06,386 - etl.load - INFO - Processed 4300/18423 proteins
+2025-06-01 19:31:54,137 - etl.load - INFO - Processed 4400/18423 proteins
+2025-06-01 19:32:39,662 - etl.load - INFO - Processed 4500/18423 proteins
+2025-06-01 19:33:21,882 - etl.load - INFO - Processed 4600/18423 proteins
+2025-06-01 19:34:04,178 - etl.load - INFO - Processed 4700/18423 proteins
+2025-06-01 19:34:46,817 - etl.load - INFO - Processed 4800/18423 proteins
+2025-06-01 19:35:33,356 - etl.load - INFO - Processed 4900/18423 proteins
+2025-06-01 19:36:18,296 - etl.load - INFO - Processed 5000/18423 proteins
+2025-06-01 19:36:58,278 - etl.load - INFO - Processed 5100/18423 proteins
+2025-06-01 19:37:39,554 - etl.load - INFO - Processed 5200/18423 proteins
+2025-06-01 19:38:17,879 - etl.load - INFO - Processed 5300/18423 proteins
+2025-06-01 19:39:03,103 - etl.load - INFO - Processed 5400/18423 proteins
+2025-06-01 19:39:41,649 - etl.load - INFO - Processed 5500/18423 proteins
+2025-06-01 19:40:02,204 - etl.load - INFO - Processed 5600/18423 proteins
+2025-06-01 19:40:30,442 - etl.load - INFO - Processed 5700/18423 proteins
+2025-06-01 19:41:12,882 - etl.load - INFO - Processed 5800/18423 proteins
+2025-06-01 19:41:57,753 - etl.load - INFO - Processed 5900/18423 proteins
+2025-06-01 19:42:44,371 - etl.load - INFO - Processed 6000/18423 proteins
+2025-06-01 19:43:29,369 - etl.load - INFO - Processed 6100/18423 proteins
+2025-06-01 19:44:11,215 - etl.load - INFO - Processed 6200/18423 proteins
+2025-06-01 19:44:56,733 - etl.load - INFO - Processed 6300/18423 proteins
+2025-06-01 19:45:41,370 - etl.load - INFO - Processed 6400/18423 proteins
+2025-06-01 19:46:21,101 - etl.load - INFO - Processed 6500/18423 proteins
+2025-06-01 19:46:53,195 - etl.load - INFO - Processed 6600/18423 proteins
+2025-06-01 19:47:31,875 - etl.load - INFO - Processed 6700/18423 proteins
+2025-06-01 19:48:16,972 - etl.load - INFO - Processed 6800/18423 proteins
+2025-06-01 19:48:54,117 - etl.load - INFO - Processed 6900/18423 proteins
+2025-06-01 19:49:16,197 - etl.load - INFO - Processed 7000/18423 proteins
+2025-06-01 19:49:51,928 - etl.load - INFO - Processed 7100/18423 proteins
+2025-06-01 19:50:12,634 - etl.load - INFO - Processed 7200/18423 proteins
+2025-06-01 19:50:50,173 - etl.load - INFO - Processed 7300/18423 proteins
+2025-06-01 19:51:23,782 - etl.load - INFO - Processed 7400/18423 proteins
+2025-06-01 19:51:47,462 - etl.load - INFO - Processed 7500/18423 proteins
+2025-06-01 19:52:29,544 - etl.load - INFO - Processed 7600/18423 proteins
+2025-06-01 19:53:12,403 - etl.load - INFO - Processed 7700/18423 proteins
+2025-06-01 19:53:54,593 - etl.load - INFO - Processed 7800/18423 proteins
+2025-06-01 19:54:32,963 - etl.load - INFO - Processed 7900/18423 proteins
+2025-06-01 19:55:00,547 - etl.load - INFO - Processed 8000/18423 proteins
+2025-06-01 19:55:52,802 - etl.load - INFO - Processed 8100/18423 proteins
+2025-06-01 19:56:34,463 - etl.load - INFO - Processed 8200/18423 proteins
+2025-06-01 19:57:15,178 - etl.load - INFO - Processed 8300/18423 proteins
+2025-06-01 19:58:00,007 - etl.load - INFO - Processed 8400/18423 proteins
+2025-06-01 19:58:38,981 - etl.load - INFO - Processed 8500/18423 proteins
+2025-06-01 19:59:02,820 - etl.load - INFO - Processed 8600/18423 proteins
+2025-06-01 20:12:49,838 - etl.load - INFO - Processed 8700/18423 proteins
+2025-06-01 20:13:32,248 - etl.load - INFO - Processed 8800/18423 proteins
+2025-06-01 20:14:17,092 - etl.load - INFO - Processed 8900/18423 proteins
+2025-06-01 20:15:04,091 - etl.load - INFO - Processed 9000/18423 proteins
+2025-06-01 20:15:45,660 - etl.load - INFO - Processed 9100/18423 proteins
+2025-06-01 20:18:00,687 - etl.load - INFO - Processed 9200/18423 proteins
+2025-06-01 20:18:44,978 - etl.load - INFO - Processed 9300/18423 proteins
+2025-06-01 20:19:30,483 - etl.load - INFO - Processed 9400/18423 proteins
+2025-06-01 20:20:39,479 - etl.load - INFO - Processed 9500/18423 proteins
+2025-06-01 20:21:30,631 - etl.load - INFO - Processed 9600/18423 proteins
+2025-06-01 20:22:19,132 - etl.load - INFO - Processed 9700/18423 proteins
+2025-06-01 20:23:10,564 - etl.load - INFO - Processed 9800/18423 proteins
+2025-06-01 20:24:31,050 - etl.load - INFO - Processed 9900/18423 proteins
+2025-06-01 20:25:24,118 - etl.load - INFO - Processed 10000/18423 proteins
+2025-06-03 08:16:04,171 - __main__ - INFO - Starting semantic layer build
+2025-06-03 08:16:04,173 - etl.load - INFO - Building semantic layer
+2025-06-03 08:24:07,161 - etl.load - INFO - Gathering proteins with OpenTargets links
+2025-06-03 08:24:10,397 - etl.load - INFO - Found 18423 proteins with OpenTargets links
+2025-06-03 08:25:08,024 - etl.load - INFO - Processed 100/18423 proteins
+2025-06-03 08:25:52,484 - etl.load - INFO - Processed 200/18423 proteins
+2025-06-03 08:26:54,422 - etl.load - INFO - Processed 300/18423 proteins
+2025-06-03 08:27:45,988 - etl.load - INFO - Processed 400/18423 proteins
+2025-06-03 08:28:43,994 - etl.load - INFO - Processed 500/18423 proteins
+2025-06-03 08:29:36,942 - etl.load - INFO - Processed 600/18423 proteins
+2025-06-03 08:30:28,674 - etl.load - INFO - Processed 700/18423 proteins
+2025-06-03 08:31:25,241 - etl.load - INFO - Processed 800/18423 proteins
+2025-06-03 08:32:10,457 - etl.load - INFO - Processed 900/18423 proteins
+2025-06-03 08:33:03,406 - etl.load - INFO - Processed 1000/18423 proteins
+2025-06-03 08:33:58,289 - etl.load - INFO - Processed 1100/18423 proteins
+2025-06-03 08:35:07,794 - etl.load - INFO - Processed 1200/18423 proteins
+2025-06-03 08:36:02,700 - etl.load - INFO - Processed 1300/18423 proteins
+2025-06-03 08:36:52,659 - etl.load - INFO - Processed 1400/18423 proteins
+2025-06-03 08:37:41,680 - etl.load - INFO - Processed 1500/18423 proteins
+2025-06-03 08:38:41,864 - etl.load - INFO - Processed 1600/18423 proteins
+2025-06-03 08:39:34,757 - etl.load - INFO - Processed 1700/18423 proteins
